@@ -1,4 +1,4 @@
-version: '2'
+version: '1.0'
 steps:
   base-build-step:
      type: build
