@@ -28,12 +28,6 @@ steps:
         username: ${{username}}
         password: ${{password}}
 
-  phpdev:
-    type: build
-    dockerfile: docker/php-dev/Dockerfile
-    image-name: ncodefresh/phpdev
-    tag: ${{CF_BRANCH}}
-
   phpfpm:
     type: build
     dockerfile: docker/php-fpm/Dockerfile
@@ -47,6 +41,12 @@ steps:
     credentials:
         username: ${{username}}
         password: ${{password}}
+
+  phpdev:
+    type: build
+    dockerfile: docker/php-dev/Dockerfile
+    image-name: ncodefresh/phpdev
+    tag: ${{CF_BRANCH}}
 
   nginx:
     type: build
