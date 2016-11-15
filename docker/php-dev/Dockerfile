@@ -1,4 +1,4 @@
-FROM app_phpfpm
+FROM debian:jessie
 
 ADD docker/php-dev/start.sh /start.sh
 RUN chmod 755 /start.sh

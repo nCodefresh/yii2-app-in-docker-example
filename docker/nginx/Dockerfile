@@ -1,4 +1,4 @@
-FROM app_base
+FROM debian:jessie
 
 RUN apt-get install -y curl nginx-full
 

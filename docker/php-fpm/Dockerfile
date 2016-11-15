@@ -1,4 +1,4 @@
-FROM app_php
+FROM debian:jessie
 
 # Initialization and Startup Script
 ADD docker/php-fpm/start.sh /start.sh
