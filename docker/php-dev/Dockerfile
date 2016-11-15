@@ -1,4 +1,4 @@
-FROM debian:jessie
+FROM ncodefresh/phpfpm:latest
 
 ADD docker/php-dev/start.sh /start.sh
 RUN chmod 755 /start.sh

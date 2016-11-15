@@ -1,4 +1,4 @@
-FROM debian:jessie
+FROM ncodefresh/php:latest
 
 # Initialization and Startup Script
 ADD docker/php-fpm/start.sh /start.sh

@@ -1,16 +1,32 @@
 version: '1.0'
 steps:
-  base-build-step:
+  base:
      type: build
      dockerfile: Dockerfile
      image-name: ncodefresh/base
      tag: ${{CF_BRANCH}}
+
+  push-base:
+    type: push
+    candidate: ${{base}}
+    tag: latest
+    credentials:
+        username: ${{username}}
+        password: ${{password}}
 
   php:
     type: build
     dockerfile: docker/php/Dockerfile
     image-name: ncodefresh/php
     tag: ${{CF_BRANCH}}
+
+  push-php:
+    type: push
+    candidate: ${{php}}
+    tag: latest
+    credentials:
+        username: ${{username}}
+        password: ${{password}}
 
   phpdev:
     type: build
@@ -21,8 +37,16 @@ steps:
   phpfpm:
     type: build
     dockerfile: docker/php-fpm/Dockerfile
-    image-name: ncodefresh/phpdev
+    image-name: ncodefresh/phpfpm
     tag: ${{CF_BRANCH}}
+
+  push-phpfpm:
+    type: push
+    candidate: ${{phpfpm}}
+    tag: latest
+    credentials:
+        username: ${{username}}
+        password: ${{password}}
 
   nginx:
     type: build

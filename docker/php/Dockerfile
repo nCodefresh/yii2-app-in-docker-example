@@ -1,4 +1,4 @@
-FROM debian:jessie
+FROM ncodefresh/base:latest
 
 RUN apt-get -y install supervisor php5-fpm php5-cli php5-mcrypt php5-msgpack php5-intl php5-curl php5-mysql --no-install-recommends
 

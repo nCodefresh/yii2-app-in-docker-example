@@ -1,4 +1,4 @@
-FROM debian:jessie
+FROM ncodefresh/base:latest
 
 RUN apt-get install -y curl nginx-full
 
