@@ -1,0 +1,31 @@
+version: '2'
+steps:
+  base-build-step:
+     type: build
+     dockerfile: Dockerfile
+     image-name: ncodefresh/base
+     tag: ${{CF_BRANCH}}
+
+  php:
+    type: build
+    dockerfile: docker/php/Dockerfile
+    image-name: ncodefresh/php
+    tag: ${{CF_BRANCH}}
+
+  phpdev:
+    type: build
+    dockerfile: docker/php-dev/Dockerfile
+    image-name: ncodefresh/phpdev
+    tag: ${{CF_BRANCH}}
+
+  phpfpm:
+    type: build
+    dockerfile: docker/php-fpm/Dockerfile
+    image-name: ncodefresh/phpdev
+    tag: ${{CF_BRANCH}}
+
+  nginx:
+    type: build
+    dockerfile: docker/nginx/Dockerfile
+    image-name: ncodefresh/nginx
+    tag: ${{CF_BRANCH}}

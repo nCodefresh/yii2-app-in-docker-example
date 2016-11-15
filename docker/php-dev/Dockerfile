@@ -1,6 +1,6 @@
 FROM app_phpfpm
 
-ADD start.sh /start.sh
+ADD docker/php-dev/start.sh /start.sh
 RUN chmod 755 /start.sh
 
 # php

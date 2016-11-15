@@ -4,7 +4,7 @@ RUN apt-get -y install supervisor php5-fpm php5-cli php5-mcrypt php5-msgpack php
 
 RUN mkdir -p /var/log/supervisor
 
-COPY php.ini /etc/php5/cli/
-COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+COPY docker/php/php.ini /etc/php5/cli/
+COPY docker/php/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 CMD ["/usr/bin/supervisord"]

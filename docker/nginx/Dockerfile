@@ -4,8 +4,8 @@ RUN apt-get install -y curl nginx-full
 
 RUN rm /etc/nginx/sites-enabled/*
 
-COPY frontend.conf /etc/nginx/sites-enabled/frontend.conf
-COPY backend.conf /etc/nginx/sites-enabled/backend.conf
+COPY docker/nginx/frontend.conf /etc/nginx/sites-enabled/frontend.conf
+COPY docker/nginx/backend.conf /etc/nginx/sites-enabled/backend.conf
 
 CMD [ \
     "/usr/local/bin/ep", "-v", \
